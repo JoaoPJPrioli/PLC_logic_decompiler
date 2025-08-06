@@ -1,0 +1,293 @@
+{
+  "success": false,
+  "timestamp": "2025-07-31T22:47:02.835048",
+  "file_path": "Test_Controller.L5X",
+  "processing_time": 0.0,
+  "components_used": [
+    "l5x_parser",
+    "ladder_logic_analyzer",
+    "instruction_analyzer",
+    "advanced_analysis"
+  ],
+  "outputs_generated": [],
+  "analysis_results": {
+    "l5x_parsing": {
+      "success": true,
+      "controller_info": {
+        "name": "Test_Controller",
+        "type": "1756-L61",
+        "firmware_revision": "20.1",
+        "project_creation_date": "Unknown",
+        "project_last_modified": "Unknown",
+        "processor_type": "1756-L61",
+        "description": ""
+      },
+      "controller_tags": [
+        {
+          "name": "Start_Button",
+          "data_type": "BOOL",
+          "scope": "controller",
+          "description": "",
+          "value": "\n0\n",
+          "program_name": "",
+          "external_access": "Read/Write",
+          "constant": false,
+          "array_dimensions": []
+        },
+        {
+          "name": "Stop_Button",
+          "data_type": "BOOL",
+          "scope": "controller",
+          "description": "",
+          "value": "\n0\n",
+          "program_name": "",
+          "external_access": "Read/Write",
+          "constant": false,
+          "array_dimensions": []
+        },
+        {
+          "name": "Motor_Run",
+          "data_type": "BOOL",
+          "scope": "controller",
+          "description": "",
+          "value": "\n0\n",
+          "program_name": "",
+          "external_access": "Read/Write",
+          "constant": false,
+          "array_dimensions": []
+        },
+        {
+          "name": "Delay_Timer",
+          "data_type": "TIMER",
+          "scope": "controller",
+          "description": "",
+          "value": "\n[0,0,0,0,0]\n",
+          "program_name": "",
+          "external_access": "Read/Write",
+          "constant": false,
+          "array_dimensions": []
+        },
+        {
+          "name": "Process_Value",
+          "data_type": "DINT",
+          "scope": "controller",
+          "description": "",
+          "value": "\n0\n",
+          "program_name": "",
+          "external_access": "Read/Write",
+          "constant": false,
+          "array_dimensions": []
+        }
+      ],
+      "programs": [
+        {
+          "name": "MainProgram",
+          "type": "Normal",
+          "description": "\nMain program for control logic\n",
+          "main_routine": "MainRoutine",
+          "routines": [
+            "MainRoutine"
+          ],
+          "tags": [
+            {
+              "name": "Local_Flag",
+              "data_type": "BOOL",
+              "scope": "program",
+              "description": "",
+              "value": "\n0\n",
+              "program_name": "MainProgram",
+              "external_access": "None",
+              "constant": false,
+              "array_dimensions": []
+            }
+          ],
+          "disabled": false
+        }
+      ],
+      "routines": [
+        {
+          "name": "MainRoutine",
+          "type": "RLL",
+          "program_name": "MainProgram",
+          "description": "\nMain control routine\n",
+          "rungs_count": 3,
+          "ladder_logic": {
+            "routine_name": "MainRoutine",
+            "program_name": "MainProgram",
+            "rungs": [
+              {
+                "number": 0,
+                "instructions": [
+                  {
+                    "type": "InstructionType.CONTACT_NO",
+                    "operand": "Start_Button",
+                    "description": "XIC instruction for Start_Button",
+                    "rung_number": 0,
+                    "position": [
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "InstructionType.CONTACT_NC",
+                    "operand": "Stop_Button",
+                    "description": "XIO instruction for Stop_Button",
+                    "rung_number": 0,
+                    "position": [
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "InstructionType.COIL",
+                    "operand": "Motor_Run",
+                    "description": "OTE instruction for Motor_Run",
+                    "rung_number": 0,
+                    "position": [
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "comment": "\nStart/Stop motor control with timer delay\n",
+                "routine_name": "MainRoutine"
+              },
+              {
+                "number": 1,
+                "instructions": [
+                  {
+                    "type": "InstructionType.CONTACT_NO",
+                    "operand": "Motor_Run",
+                    "description": "XIC instruction for Motor_Run",
+                    "rung_number": 1,
+                    "position": [
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "InstructionType.TIMER_ON",
+                    "operand": "Delay_Timer",
+                    "description": "TON instruction for Delay_Timer",
+                    "rung_number": 1,
+                    "position": [
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "comment": "\nTimer for delayed operation\n",
+                "routine_name": "MainRoutine"
+              },
+              {
+                "number": 2,
+                "instructions": [
+                  {
+                    "type": "InstructionType.COIL",
+                    "operand": "Local_Flag",
+                    "description": "OTE instruction for Local_Flag",
+                    "rung_number": 2,
+                    "position": [
+                      0,
+                      0
+                    ]
+                  }
+                ],
+                "comment": "\nProcess value monitoring\n",
+                "routine_name": "MainRoutine"
+              }
+            ]
+          }
+        }
+      ],
+      "io_modules": [],
+      "parsing_time": 0.001704,
+      "enhanced_variables": {
+        "controller_scope": [
+          {
+            "name": "Start_Button",
+            "data_type": "BOOL",
+            "scope": "controller",
+            "description": "",
+            "array_dimensions": []
+          },
+          {
+            "name": "Stop_Button",
+            "data_type": "BOOL",
+            "scope": "controller",
+            "description": "",
+            "array_dimensions": []
+          },
+          {
+            "name": "Motor_Run",
+            "data_type": "BOOL",
+            "scope": "controller",
+            "description": "",
+            "array_dimensions": []
+          },
+          {
+            "name": "Delay_Timer",
+            "data_type": "TIMER",
+            "scope": "controller",
+            "description": "",
+            "array_dimensions": []
+          },
+          {
+            "name": "Process_Value",
+            "data_type": "DINT",
+            "scope": "controller",
+            "description": "",
+            "array_dimensions": []
+          }
+        ],
+        "program_scope": {
+          "MainProgram": [
+            {
+              "name": "Local_Flag",
+              "data_type": "BOOL",
+              "scope": "program:MainProgram",
+              "description": "",
+              "array_dimensions": []
+            }
+          ]
+        },
+        "io_variables": [],
+        "udt_variables": [],
+        "array_variables": [],
+        "total_count": 6
+      }
+    },
+    "ladder_logic": {
+      "success": true,
+      "routines_analyzed": [],
+      "total_rungs": 0,
+      "total_instructions": 0,
+      "instruction_distribution": {},
+      "tag_references": []
+    },
+    "instruction_analysis": {
+      "success": true,
+      "analyzed_instructions": [],
+      "instruction_categories": {},
+      "tag_dependencies": [],
+      "complexity_metrics": {}
+    },
+    "graph_analysis": {
+      "success": false,
+      "error": "Graph builder not available"
+    },
+    "advanced_analysis": {
+      "success": true,
+      "components": {}
+    },
+    "chromadb": {
+      "success": false,
+      "error": "'PLCSemanticSearchEngine' object has no attribute 'index_documents'"
+    },
+    "code_generation": {
+      "success": false,
+      "error": "Code generation not available"
+    }
+  },
+  "errors": []
+}

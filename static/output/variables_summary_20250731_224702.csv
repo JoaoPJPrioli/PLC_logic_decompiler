@@ -1,0 +1,7 @@
+Name,Data Type,Scope,Description
+Start_Button,BOOL,controller,
+Stop_Button,BOOL,controller,
+Motor_Run,BOOL,controller,
+Delay_Timer,TIMER,controller,
+Process_Value,DINT,controller,
+Local_Flag,BOOL,program:MainProgram,

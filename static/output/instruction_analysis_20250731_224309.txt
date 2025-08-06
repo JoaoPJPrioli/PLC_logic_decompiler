@@ -1,0 +1,1 @@
+PLC Instruction Analysis Report\nGenerated: 2025-07-31T22:43:09.944978\n==================================================\n\nTotal Instructions Analyzed: 0\nInstruction Categories:\n

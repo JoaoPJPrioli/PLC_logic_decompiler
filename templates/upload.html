@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Upload L5X File - PLC Logic Decompiler{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h4>📁 Upload L5X File</h4>
+            </div>
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="file" class="form-label">Select L5X File</label>
+                        <input type="file" class="form-control" id="file" name="file" accept=".l5x" required>
+                        <div class="form-text">Upload a Rockwell L5X PLC program file (max 16MB)</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload and Process</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5>What happens during processing?</h5>
+            </div>
+            <div class="card-body">
+                <ol>
+                    <li><strong>File Validation:</strong> Verify L5X format and structure</li>
+                    <li><strong>Tag Extraction:</strong> Extract controller and program tags</li>
+                    <li><strong>Logic Analysis:</strong> Parse ladder logic and instructions</li>
+                    <li><strong>Knowledge Graph:</strong> Build relationships and dependencies</li>
+                    <li><strong>Advanced Analysis:</strong> Timer, counter, and UDT analysis</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

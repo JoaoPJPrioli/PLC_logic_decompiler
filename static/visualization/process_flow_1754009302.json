@@ -1,0 +1,469 @@
+{
+  "visualization_data": {
+    "nodes": [
+      {
+        "id": "system_start",
+        "label": "System Startup",
+        "type": "start",
+        "x": 50,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#4CAF50"
+      },
+      {
+        "id": "safety_check",
+        "label": "Safety Systems Check",
+        "type": "decision",
+        "x": 200,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#FF9800"
+      },
+      {
+        "id": "emergency_stop",
+        "label": "Emergency Stop",
+        "type": "end",
+        "x": 200,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "color": "#F44336"
+      },
+      {
+        "id": "init_motors",
+        "label": "Initialize Motors",
+        "type": "process",
+        "x": 350,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#2196F3"
+      },
+      {
+        "id": "init_sensors",
+        "label": "Initialize Sensors",
+        "type": "io",
+        "x": 500,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#9C27B0"
+      },
+      {
+        "id": "wait_start",
+        "label": "Wait for Start Signal",
+        "type": "io",
+        "x": 650,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#9C27B0"
+      },
+      {
+        "id": "start_received",
+        "label": "Start Signal?",
+        "type": "decision",
+        "x": 800,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#FF9800"
+      },
+      {
+        "id": "conveyor_start",
+        "label": "Start Conveyor",
+        "type": "process",
+        "x": 950,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#2196F3"
+      },
+      {
+        "id": "part_detection",
+        "label": "Detect Part",
+        "type": "io",
+        "x": 1100,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#9C27B0"
+      },
+      {
+        "id": "part_present",
+        "label": "Part Present?",
+        "type": "decision",
+        "x": 1250,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#FF9800"
+      },
+      {
+        "id": "process_part",
+        "label": "Process Part",
+        "type": "process",
+        "x": 1400,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#2196F3"
+      },
+      {
+        "id": "quality_check",
+        "label": "Quality Check",
+        "type": "decision",
+        "x": 1550,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#FF9800"
+      },
+      {
+        "id": "reject_part",
+        "label": "Reject Part",
+        "type": "process",
+        "x": 1550,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "color": "#2196F3"
+      },
+      {
+        "id": "accept_part",
+        "label": "Accept Part",
+        "type": "process",
+        "x": 1700,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#2196F3"
+      },
+      {
+        "id": "count_part",
+        "label": "Count Completed Part",
+        "type": "process",
+        "x": 1850,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#2196F3"
+      },
+      {
+        "id": "batch_complete",
+        "label": "Batch Complete?",
+        "type": "decision",
+        "x": 2000,
+        "y": 100,
+        "width": 120,
+        "height": 60,
+        "color": "#FF9800"
+      },
+      {
+        "id": "continue_cycle",
+        "label": "Continue Production",
+        "type": "process",
+        "x": 1100,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "color": "#2196F3"
+      },
+      {
+        "id": "shutdown_start",
+        "label": "Start Shutdown",
+        "type": "process",
+        "x": 2000,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "color": "#2196F3"
+      },
+      {
+        "id": "stop_motors",
+        "label": "Stop All Motors",
+        "type": "process",
+        "x": 2150,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "color": "#2196F3"
+      },
+      {
+        "id": "safety_lockout",
+        "label": "Engage Safety Lockout",
+        "type": "process",
+        "x": 2300,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "color": "#2196F3"
+      },
+      {
+        "id": "system_stop",
+        "label": "System Stopped",
+        "type": "end",
+        "x": 2450,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "color": "#F44336"
+      },
+      {
+        "id": "startup_delay",
+        "label": "Startup Delay (5s)",
+        "type": "delay",
+        "x": 350,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "color": "#607D8B"
+      },
+      {
+        "id": "process_delay",
+        "label": "Process Delay (10s)",
+        "type": "delay",
+        "x": 1400,
+        "y": 200,
+        "width": 120,
+        "height": 60,
+        "color": "#607D8B"
+      }
+    ],
+    "edges": [
+      {
+        "id": "connection_0",
+        "source": "system_start",
+        "target": "safety_check",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_1",
+        "source": "safety_check",
+        "target": "init_motors",
+        "type": "sequential",
+        "label": "All Safe",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_2",
+        "source": "safety_check",
+        "target": "emergency_stop",
+        "type": "sequential",
+        "label": "Safety Fault",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_3",
+        "source": "init_motors",
+        "target": "startup_delay",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_4",
+        "source": "startup_delay",
+        "target": "init_sensors",
+        "type": "sequential",
+        "label": "Delay Complete",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_5",
+        "source": "init_sensors",
+        "target": "wait_start",
+        "type": "sequential",
+        "label": "Sensors OK",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_6",
+        "source": "wait_start",
+        "target": "start_received",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_7",
+        "source": "start_received",
+        "target": "conveyor_start",
+        "type": "sequential",
+        "label": "Start = True",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_8",
+        "source": "start_received",
+        "target": "wait_start",
+        "type": "sequential",
+        "label": "Start = False",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_9",
+        "source": "conveyor_start",
+        "target": "part_detection",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_10",
+        "source": "part_detection",
+        "target": "part_present",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_11",
+        "source": "part_present",
+        "target": "process_part",
+        "type": "sequential",
+        "label": "Part = True",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_12",
+        "source": "part_present",
+        "target": "continue_cycle",
+        "type": "sequential",
+        "label": "Part = False",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_13",
+        "source": "process_part",
+        "target": "process_delay",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_14",
+        "source": "process_delay",
+        "target": "quality_check",
+        "type": "sequential",
+        "label": "Process Complete",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_15",
+        "source": "quality_check",
+        "target": "accept_part",
+        "type": "sequential",
+        "label": "Quality OK",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_16",
+        "source": "quality_check",
+        "target": "reject_part",
+        "type": "sequential",
+        "label": "Quality Fail",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_17",
+        "source": "accept_part",
+        "target": "count_part",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_18",
+        "source": "reject_part",
+        "target": "continue_cycle",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_19",
+        "source": "count_part",
+        "target": "batch_complete",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_20",
+        "source": "batch_complete",
+        "target": "continue_cycle",
+        "type": "sequential",
+        "label": "More Parts",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_21",
+        "source": "batch_complete",
+        "target": "shutdown_start",
+        "type": "sequential",
+        "label": "Batch Done",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_22",
+        "source": "continue_cycle",
+        "target": "part_detection",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_23",
+        "source": "shutdown_start",
+        "target": "stop_motors",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_24",
+        "source": "stop_motors",
+        "target": "safety_lockout",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      },
+      {
+        "id": "connection_25",
+        "source": "safety_lockout",
+        "target": "system_stop",
+        "type": "sequential",
+        "label": "",
+        "color": "#2196F3"
+      }
+    ],
+    "metadata": {
+      "flow_type": "manufacturing_process",
+      "process_count": 23,
+      "connection_count": 26
+    },
+    "config": {
+      "type": "VisualizationType.PROCESS_FLOW",
+      "title": "Manufacturing Process Flow - Interactive Diagram",
+      "width": 2500,
+      "height": 400,
+      "interactive": true,
+      "animation": true,
+      "theme": "dark",
+      "export_formats": [
+        "html",
+        "svg",
+        "png",
+        "json"
+      ]
+    },
+    "created_at": "2025-07-31 20:48:22.822952"
+  },
+  "export_timestamp": "2025-07-31T20:48:22.830819",
+  "export_format": "json"
+}

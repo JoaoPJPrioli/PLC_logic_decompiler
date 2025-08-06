@@ -1,0 +1,274 @@
+{
+  "visualization_data": {
+    "nodes": [
+      {
+        "id": "Motor_1_Start",
+        "label": "Motor_1_Start",
+        "type": "tag",
+        "size": 12,
+        "color": "#4CAF50",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "metadata": {}
+      },
+      {
+        "id": "Motor_1_Stop",
+        "label": "Motor_1_Stop",
+        "type": "tag",
+        "size": 12,
+        "color": "#4CAF50",
+        "x": 30,
+        "y": 0,
+        "z": 0,
+        "metadata": {}
+      },
+      {
+        "id": "Motor_1_Run",
+        "label": "Motor_1_Run",
+        "type": "tag",
+        "size": 15,
+        "color": "#4CAF50",
+        "x": 60,
+        "y": 0,
+        "z": 0,
+        "metadata": {}
+      },
+      {
+        "id": "Conveyor_Speed",
+        "label": "Conveyor_Speed",
+        "type": "tag",
+        "size": 10,
+        "color": "#4CAF50",
+        "x": 0,
+        "y": 30,
+        "z": 0,
+        "metadata": {}
+      },
+      {
+        "id": "MainRoutine",
+        "label": "MainRoutine",
+        "type": "routine",
+        "size": 20,
+        "color": "#2196F3",
+        "x": 30,
+        "y": 30,
+        "z": 30,
+        "metadata": {}
+      },
+      {
+        "id": "SafetyRoutine",
+        "label": "SafetyRoutine",
+        "type": "routine",
+        "size": 18,
+        "color": "#2196F3",
+        "x": 60,
+        "y": 30,
+        "z": 30,
+        "metadata": {}
+      },
+      {
+        "id": "XIC_Start",
+        "label": "XIC Motor_Start",
+        "type": "instruction",
+        "size": 8,
+        "color": "#FF9800",
+        "x": 15,
+        "y": 15,
+        "z": 15,
+        "metadata": {}
+      },
+      {
+        "id": "OTE_Run",
+        "label": "OTE Motor_Run",
+        "type": "instruction",
+        "size": 8,
+        "color": "#FF9800",
+        "x": 45,
+        "y": 15,
+        "z": 15,
+        "metadata": {}
+      },
+      {
+        "id": "Timer_1",
+        "label": "Timer_1",
+        "type": "timer",
+        "size": 14,
+        "color": "#F44336",
+        "x": 0,
+        "y": 60,
+        "z": 0,
+        "metadata": {}
+      },
+      {
+        "id": "Counter_1",
+        "label": "Counter_1",
+        "type": "counter",
+        "size": 14,
+        "color": "#607D8B",
+        "x": 30,
+        "y": 60,
+        "z": 0,
+        "metadata": {}
+      },
+      {
+        "id": "I_1_0",
+        "label": "Local:1:I.0",
+        "type": "io_point",
+        "size": 10,
+        "color": "#9C27B0",
+        "x": 60,
+        "y": 60,
+        "z": 0,
+        "metadata": {}
+      },
+      {
+        "id": "O_1_0",
+        "label": "Local:1:O.0",
+        "type": "io_point",
+        "size": 10,
+        "color": "#9C27B0",
+        "x": 90,
+        "y": 60,
+        "z": 0,
+        "metadata": {}
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge_0",
+        "source": "Motor_1_Start",
+        "target": "XIC_Start",
+        "weight": 1.0,
+        "type": "data_flow",
+        "color": "#4CAF50",
+        "width": 2,
+        "metadata": {}
+      },
+      {
+        "id": "edge_1",
+        "source": "XIC_Start",
+        "target": "OTE_Run",
+        "weight": 1.0,
+        "type": "control_flow",
+        "color": "#2196F3",
+        "width": 2,
+        "metadata": {}
+      },
+      {
+        "id": "edge_2",
+        "source": "OTE_Run",
+        "target": "Motor_1_Run",
+        "weight": 1.0,
+        "type": "data_flow",
+        "color": "#4CAF50",
+        "width": 2,
+        "metadata": {}
+      },
+      {
+        "id": "edge_3",
+        "source": "MainRoutine",
+        "target": "XIC_Start",
+        "weight": 0.8,
+        "type": "reference",
+        "color": "#9C27B0",
+        "width": 2,
+        "metadata": {}
+      },
+      {
+        "id": "edge_4",
+        "source": "MainRoutine",
+        "target": "OTE_Run",
+        "weight": 0.8,
+        "type": "reference",
+        "color": "#9C27B0",
+        "width": 2,
+        "metadata": {}
+      },
+      {
+        "id": "edge_5",
+        "source": "SafetyRoutine",
+        "target": "Motor_1_Stop",
+        "weight": 0.6,
+        "type": "reference",
+        "color": "#9C27B0",
+        "width": 2,
+        "metadata": {}
+      },
+      {
+        "id": "edge_6",
+        "source": "Timer_1",
+        "target": "MainRoutine",
+        "weight": 0.7,
+        "type": "dependency",
+        "color": "#FF9800",
+        "width": 2,
+        "metadata": {}
+      },
+      {
+        "id": "edge_7",
+        "source": "Counter_1",
+        "target": "MainRoutine",
+        "weight": 0.5,
+        "type": "dependency",
+        "color": "#FF9800",
+        "width": 2,
+        "metadata": {}
+      },
+      {
+        "id": "edge_8",
+        "source": "I_1_0",
+        "target": "Motor_1_Start",
+        "weight": 1.0,
+        "type": "data_flow",
+        "color": "#4CAF50",
+        "width": 2,
+        "metadata": {}
+      },
+      {
+        "id": "edge_9",
+        "source": "Motor_1_Run",
+        "target": "O_1_0",
+        "weight": 1.0,
+        "type": "data_flow",
+        "color": "#4CAF50",
+        "width": 2,
+        "metadata": {}
+      },
+      {
+        "id": "edge_10",
+        "source": "MainRoutine",
+        "target": "SafetyRoutine",
+        "weight": 0.9,
+        "type": "call",
+        "color": "#F44336",
+        "width": 2,
+        "metadata": {}
+      }
+    ],
+    "metadata": {
+      "node_count": 12,
+      "edge_count": 11,
+      "layout": "force_directed_3d",
+      "physics_enabled": true
+    },
+    "config": {
+      "type": "VisualizationType.NETWORK_3D",
+      "title": "PLC System - 3D Interactive Network",
+      "width": 1400,
+      "height": 900,
+      "interactive": true,
+      "animation": true,
+      "theme": "dark",
+      "export_formats": [
+        "html",
+        "svg",
+        "png",
+        "json"
+      ]
+    },
+    "created_at": "2025-07-31 20:48:14.659887"
+  },
+  "export_timestamp": "2025-07-31T20:48:14.661333",
+  "export_format": "json"
+}

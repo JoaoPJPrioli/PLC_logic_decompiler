@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="jumbotron bg-primary text-white p-5 rounded mb-4">
+            <h1 class="display-4">🏭 PLC Logic Decompiler</h1>
+            <p class="lead">Advanced AI-powered conversion of Rockwell L5X PLC programs to Python code</p>
+            <hr class="my-4">
+            <p>Upload your L5X files, analyze PLC logic, and generate production-ready Python interfaces with AI assistance.</p>
+            <a class="btn btn-light btn-lg" href="/upload" role="button">Get Started 🚀</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">📁 L5X Processing</h5>
+                <p class="card-text">Upload and analyze Rockwell L5X files with comprehensive tag extraction and logic analysis.</p>
+                <a href="/upload" class="btn btn-primary">Upload File</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">🤖 AI Code Generation</h5>
+                <p class="card-text">Generate production-ready Python code using advanced AI with context awareness and multi-model coordination.</p>
+                <a href="/generate" class="btn btn-success">Generate Code</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h5 class="card-title">📊 Advanced Analysis</h5>
+                <p class="card-text">Deep logic analysis, knowledge graphs, and intelligent pattern recognition for industrial automation.</p>
+                <a href="/analysis" class="btn btn-info">View Analysis</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <h3>Key Features</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">✅ Complete L5X file parsing and analysis</li>
+                    <li class="list-group-item">✅ Advanced ladder logic interpretation</li>
+                    <li class="list-group-item">✅ Knowledge graph generation</li>
+                    <li class="list-group-item">✅ AI-powered code generation</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">✅ Multi-model AI coordination</li>
+                    <li class="list-group-item">✅ Context-aware generation</li>
+                    <li class="list-group-item">✅ Learning and adaptation</li>
+                    <li class="list-group-item">✅ Production-ready output</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

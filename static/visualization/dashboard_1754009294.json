@@ -1,0 +1,121 @@
+{
+  "visualization_data": {
+    "nodes": [],
+    "edges": [],
+    "metadata": {
+      "metrics": {
+        "total_tags": 10,
+        "total_routines": 4,
+        "total_instructions": 28,
+        "complexity_score": 1.08,
+        "performance_score": 9.65,
+        "safety_score": 7.8,
+        "optimization_opportunities": 0,
+        "last_updated": "2025-07-31 20:48:14.661333"
+      },
+      "charts": {
+        "tag_distribution": {
+          "BOOL": 3,
+          "REAL": 2,
+          "INT": 1,
+          "TIMER": 1,
+          "COUNTER": 1,
+          "UDT": 1,
+          "STRING": 1
+        },
+        "instruction_types": {
+          "XIC": 3,
+          "XIO": 1,
+          "OTE": 1,
+          "OTL": 1,
+          "OTU": 1,
+          "TON": 1,
+          "TOF": 1,
+          "RTO": 1,
+          "CTU": 1,
+          "CTD": 1,
+          "RES": 1,
+          "MOV": 1,
+          "CPT": 1,
+          "ADD": 1,
+          "MUL": 1,
+          "GRT": 1,
+          "EQU": 1,
+          "LES": 1,
+          "JSR": 1,
+          "SBR": 1,
+          "RET": 1,
+          "JMP": 1,
+          "LBL": 1,
+          "COP": 1,
+          "FLL": 1,
+          "MSG": 1
+        },
+        "routine_complexity": {
+          "MainRoutine": 0.8,
+          "SafetyRoutine": 0.5,
+          "MotorControl": 0.8,
+          "DiagnosticRoutine": 0.5
+        },
+        "performance_trends": {
+          "response_time": [
+            1.2,
+            1.1,
+            1.3,
+            1.0,
+            0.9,
+            1.1,
+            1.0
+          ],
+          "memory_usage": [
+            45.2,
+            46.1,
+            44.8,
+            47.2,
+            48.1,
+            46.9,
+            45.5
+          ],
+          "cpu_utilization": [
+            12.5,
+            13.2,
+            11.8,
+            14.1,
+            12.9,
+            13.5,
+            12.1
+          ]
+        }
+      },
+      "alerts": [],
+      "trends": {
+        "complexity_trend": "stable",
+        "performance_trend": "improving",
+        "safety_trend": "stable",
+        "recommendations": [
+          "Consider consolidating similar routines",
+          "Review unused tags for cleanup",
+          "Add more safety interlocks"
+        ]
+      }
+    },
+    "config": {
+      "type": "VisualizationType.ANALYTICS_DASHBOARD",
+      "title": "PLC System Analytics Dashboard",
+      "width": 1600,
+      "height": 1000,
+      "interactive": true,
+      "animation": true,
+      "theme": "dark",
+      "export_formats": [
+        "html",
+        "svg",
+        "png",
+        "json"
+      ]
+    },
+    "created_at": "2025-07-31 20:48:14.661333"
+  },
+  "export_timestamp": "2025-07-31T20:48:14.669343",
+  "export_format": "json"
+}

@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manufacturing Process Flow - Interactive Diagram</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.6.1/d3.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
+        #flowDiagram {
+            width: 100%;
+            height: 600px;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .process-node {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .process-node:hover {
+            stroke-width: 3px;
+            filter: brightness(1.1);
+        }
+        .connection-line {
+            fill: none;
+            stroke-width: 2;
+            marker-end: url(#arrowhead);
+        }
+        .node-label {
+            text-anchor: middle;
+            dominant-baseline: middle;
+            font-size: 12px;
+            font-weight: bold;
+            fill: white;
+        }
+        .connection-label {
+            text-anchor: middle;
+            font-size: 10px;
+            fill: #666;
+        }
+        #controls {
+            margin-bottom: 20px;
+        }
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            margin: 2px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1976D2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Manufacturing Process Flow - Interactive Diagram</h1>
+    
+    <div id="controls">
+        <button onclick="zoomIn()">Zoom In</button>
+        <button onclick="zoomOut()">Zoom Out</button>
+        <button onclick="resetZoom()">Reset Zoom</button>
+        <button onclick="exportDiagram()">Export SVG</button>
+    </div>
+    
+    <div id="flowDiagram"></div>
+    
+    <script>
+        const nodes = [{"id": "system_start", "label": "System Startup", "type": "start", "x": 50, "y": 100, "width": 120, "height": 60, "color": "#4CAF50"}, {"id": "safety_check", "label": "Safety Systems Check", "type": "decision", "x": 200, "y": 100, "width": 120, "height": 60, "color": "#FF9800"}, {"id": "emergency_stop", "label": "Emergency Stop", "type": "end", "x": 200, "y": 200, "width": 120, "height": 60, "color": "#F44336"}, {"id": "init_motors", "label": "Initialize Motors", "type": "process", "x": 350, "y": 100, "width": 120, "height": 60, "color": "#2196F3"}, {"id": "init_sensors", "label": "Initialize Sensors", "type": "io", "x": 500, "y": 100, "width": 120, "height": 60, "color": "#9C27B0"}, {"id": "wait_start", "label": "Wait for Start Signal", "type": "io", "x": 650, "y": 100, "width": 120, "height": 60, "color": "#9C27B0"}, {"id": "start_received", "label": "Start Signal?", "type": "decision", "x": 800, "y": 100, "width": 120, "height": 60, "color": "#FF9800"}, {"id": "conveyor_start", "label": "Start Conveyor", "type": "process", "x": 950, "y": 100, "width": 120, "height": 60, "color": "#2196F3"}, {"id": "part_detection", "label": "Detect Part", "type": "io", "x": 1100, "y": 100, "width": 120, "height": 60, "color": "#9C27B0"}, {"id": "part_present", "label": "Part Present?", "type": "decision", "x": 1250, "y": 100, "width": 120, "height": 60, "color": "#FF9800"}, {"id": "process_part", "label": "Process Part", "type": "process", "x": 1400, "y": 100, "width": 120, "height": 60, "color": "#2196F3"}, {"id": "quality_check", "label": "Quality Check", "type": "decision", "x": 1550, "y": 100, "width": 120, "height": 60, "color": "#FF9800"}, {"id": "reject_part", "label": "Reject Part", "type": "process", "x": 1550, "y": 200, "width": 120, "height": 60, "color": "#2196F3"}, {"id": "accept_part", "label": "Accept Part", "type": "process", "x": 1700, "y": 100, "width": 120, "height": 60, "color": "#2196F3"}, {"id": "count_part", "label": "Count Completed Part", "type": "process", "x": 1850, "y": 100, "width": 120, "height": 60, "color": "#2196F3"}, {"id": "batch_complete", "label": "Batch Complete?", "type": "decision", "x": 2000, "y": 100, "width": 120, "height": 60, "color": "#FF9800"}, {"id": "continue_cycle", "label": "Continue Production", "type": "process", "x": 1100, "y": 200, "width": 120, "height": 60, "color": "#2196F3"}, {"id": "shutdown_start", "label": "Start Shutdown", "type": "process", "x": 2000, "y": 200, "width": 120, "height": 60, "color": "#2196F3"}, {"id": "stop_motors", "label": "Stop All Motors", "type": "process", "x": 2150, "y": 200, "width": 120, "height": 60, "color": "#2196F3"}, {"id": "safety_lockout", "label": "Engage Safety Lockout", "type": "process", "x": 2300, "y": 200, "width": 120, "height": 60, "color": "#2196F3"}, {"id": "system_stop", "label": "System Stopped", "type": "end", "x": 2450, "y": 200, "width": 120, "height": 60, "color": "#F44336"}, {"id": "startup_delay", "label": "Startup Delay (5s)", "type": "delay", "x": 350, "y": 200, "width": 120, "height": 60, "color": "#607D8B"}, {"id": "process_delay", "label": "Process Delay (10s)", "type": "delay", "x": 1400, "y": 200, "width": 120, "height": 60, "color": "#607D8B"}];
+        const edges = [{"id": "connection_0", "source": "system_start", "target": "safety_check", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_1", "source": "safety_check", "target": "init_motors", "type": "sequential", "label": "All Safe", "color": "#2196F3"}, {"id": "connection_2", "source": "safety_check", "target": "emergency_stop", "type": "sequential", "label": "Safety Fault", "color": "#2196F3"}, {"id": "connection_3", "source": "init_motors", "target": "startup_delay", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_4", "source": "startup_delay", "target": "init_sensors", "type": "sequential", "label": "Delay Complete", "color": "#2196F3"}, {"id": "connection_5", "source": "init_sensors", "target": "wait_start", "type": "sequential", "label": "Sensors OK", "color": "#2196F3"}, {"id": "connection_6", "source": "wait_start", "target": "start_received", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_7", "source": "start_received", "target": "conveyor_start", "type": "sequential", "label": "Start = True", "color": "#2196F3"}, {"id": "connection_8", "source": "start_received", "target": "wait_start", "type": "sequential", "label": "Start = False", "color": "#2196F3"}, {"id": "connection_9", "source": "conveyor_start", "target": "part_detection", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_10", "source": "part_detection", "target": "part_present", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_11", "source": "part_present", "target": "process_part", "type": "sequential", "label": "Part = True", "color": "#2196F3"}, {"id": "connection_12", "source": "part_present", "target": "continue_cycle", "type": "sequential", "label": "Part = False", "color": "#2196F3"}, {"id": "connection_13", "source": "process_part", "target": "process_delay", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_14", "source": "process_delay", "target": "quality_check", "type": "sequential", "label": "Process Complete", "color": "#2196F3"}, {"id": "connection_15", "source": "quality_check", "target": "accept_part", "type": "sequential", "label": "Quality OK", "color": "#2196F3"}, {"id": "connection_16", "source": "quality_check", "target": "reject_part", "type": "sequential", "label": "Quality Fail", "color": "#2196F3"}, {"id": "connection_17", "source": "accept_part", "target": "count_part", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_18", "source": "reject_part", "target": "continue_cycle", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_19", "source": "count_part", "target": "batch_complete", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_20", "source": "batch_complete", "target": "continue_cycle", "type": "sequential", "label": "More Parts", "color": "#2196F3"}, {"id": "connection_21", "source": "batch_complete", "target": "shutdown_start", "type": "sequential", "label": "Batch Done", "color": "#2196F3"}, {"id": "connection_22", "source": "continue_cycle", "target": "part_detection", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_23", "source": "shutdown_start", "target": "stop_motors", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_24", "source": "stop_motors", "target": "safety_lockout", "type": "sequential", "label": "", "color": "#2196F3"}, {"id": "connection_25", "source": "safety_lockout", "target": "system_stop", "type": "sequential", "label": "", "color": "#2196F3"}];
+        
+        const svg = d3.select("#flowDiagram")
+            .append("svg")
+            .attr("width", "100%")
+            .attr("height", "100%");
+            
+        const g = svg.append("g");
+        
+        // Define arrowhead marker
+        svg.append("defs").append("marker")
+            .attr("id", "arrowhead")
+            .attr("viewBox", "0 -5 10 10")
+            .attr("refX", 8)
+            .attr("refY", 0)
+            .attr("markerWidth", 6)
+            .attr("markerHeight", 6)
+            .attr("orient", "auto")
+            .append("path")
+            .attr("d", "M0,-5L10,0L0,5")
+            .attr("fill", "#666");
+        
+        // Add zoom behavior
+        const zoom = d3.zoom()
+            .scaleExtent([0.1, 3])
+            .on("zoom", (event) => {
+                g.attr("transform", event.transform);
+            });
+            
+        svg.call(zoom);
+        
+        // Draw connections
+        const connections = g.selectAll(".connection")
+            .data(edges)
+            .enter()
+            .append("g")
+            .attr("class", "connection");
+            
+        connections.append("line")
+            .attr("class", "connection-line")
+            .attr("x1", d => {
+                const sourceNode = nodes.find(n => n.id === d.source);
+                return sourceNode ? sourceNode.x + sourceNode.width/2 : 0;
+            })
+            .attr("y1", d => {
+                const sourceNode = nodes.find(n => n.id === d.source);
+                return sourceNode ? sourceNode.y + sourceNode.height/2 : 0;
+            })
+            .attr("x2", d => {
+                const targetNode = nodes.find(n => n.id === d.target);
+                return targetNode ? targetNode.x + targetNode.width/2 : 0;
+            })
+            .attr("y2", d => {
+                const targetNode = nodes.find(n => n.id === d.target);
+                return targetNode ? targetNode.y + targetNode.height/2 : 0;
+            })
+            .attr("stroke", d => d.color);
+            
+        // Add connection labels
+        connections.append("text")
+            .attr("class", "connection-label")
+            .attr("x", d => {
+                const sourceNode = nodes.find(n => n.id === d.source);
+                const targetNode = nodes.find(n => n.id === d.target);
+                if (sourceNode && targetNode) {
+                    return (sourceNode.x + targetNode.x) / 2 + (sourceNode.width + targetNode.width) / 4;
+                }
+                return 0;
+            })
+            .attr("y", d => {
+                const sourceNode = nodes.find(n => n.id === d.source);
+                const targetNode = nodes.find(n => n.id === d.target);
+                if (sourceNode && targetNode) {
+                    return (sourceNode.y + targetNode.y) / 2 + (sourceNode.height + targetNode.height) / 4;
+                }
+                return 0;
+            })
+            .text(d => d.label);
+        
+        // Draw process nodes
+        const processNodes = g.selectAll(".process-node")
+            .data(nodes)
+            .enter()
+            .append("g")
+            .attr("class", "process-node");
+        
+        processNodes.append("rect")
+            .attr("x", d => d.x)
+            .attr("y", d => d.y)
+            .attr("width", d => d.width)
+            .attr("height", d => d.height)
+            .attr("fill", d => d.color)
+            .attr("stroke", "#333")
+            .attr("stroke-width", 1)
+            .attr("rx", 5);
+            
+        processNodes.append("text")
+            .attr("class", "node-label")
+            .attr("x", d => d.x + d.width/2)
+            .attr("y", d => d.y + d.height/2)
+            .text(d => d.label);
+        
+        // Zoom controls
+        function zoomIn() {
+            svg.transition().call(zoom.scaleBy, 1.5);
+        }
+        
+        function zoomOut() {
+            svg.transition().call(zoom.scaleBy, 1 / 1.5);
+        }
+        
+        function resetZoom() {
+            svg.transition().call(zoom.transform, d3.zoomIdentity);
+        }
+        
+        function exportDiagram() {
+            const svgData = svg.node().outerHTML;
+            const blob = new Blob([svgData], {type: "image/svg+xml"});
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "Manufacturing Process Flow - Interactive Diagram_process_flow.svg";
+            link.click();
+        }
+    </script>
+</body>
+</html>
+        
