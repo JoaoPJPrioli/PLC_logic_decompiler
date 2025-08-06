@@ -1,0 +1,120 @@
+2025-07-31 21:19:07,899 - __main__ - INFO - Created 8 HTML templates
+2025-07-31 21:19:07,916 - __main__ - INFO - PLC Decompiler Web Application initialized
+2025-07-31 21:19:07,944 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-31 21:19:07,944 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-31 21:19:36,797 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:19:36] "GET / HTTP/1.1" 200 -
+2025-07-31 21:19:37,176 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:19:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-07-31 21:19:46,541 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:19:46] "GET /upload HTTP/1.1" 200 -
+2025-07-31 21:19:59,453 - __main__ - INFO - Starting L5X file processing: uploads\20250731_211959_Assembly_Controls_Robot.L5X
+2025-07-31 21:19:59,453 - __main__ - INFO - L5X processing completed in 0.00 seconds
+2025-07-31 21:19:59,457 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:19:59] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-07-31 21:19:59,755 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:19:59] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 21:20:29,614 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:20:29] "GET / HTTP/1.1" 200 -
+2025-07-31 21:20:40,055 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:20:40] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 21:20:44,535 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:20:44] "GET /generate HTTP/1.1" 200 -
+2025-07-31 21:20:54,161 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:20:54] "GET /generate HTTP/1.1" 200 -
+2025-07-31 21:20:55,761 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:20:55] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 21:20:56,895 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:20:56] "GET /upload HTTP/1.1" 200 -
+2025-07-31 21:20:58,560 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:20:58] "GET /upload HTTP/1.1" 200 -
+2025-07-31 21:21:00,833 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:21:00] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 21:21:04,047 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:21:04] "GET /advanced HTTP/1.1" 200 -
+2025-07-31 21:21:05,948 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:21:05] "GET /generate HTTP/1.1" 200 -
+2025-07-31 21:21:06,957 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:21:06] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 21:21:07,902 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:21:07] "GET /upload HTTP/1.1" 200 -
+2025-07-31 21:21:12,209 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:21:12] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 21:21:14,788 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:21:14] "GET /generate HTTP/1.1" 200 -
+2025-07-31 21:22:24,574 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:22:24] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 21:22:50,026 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:22:50] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 21:22:51,240 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:22:51] "GET / HTTP/1.1" 200 -
+2025-07-31 21:52:50,309 - __main__ - INFO - Created 8 HTML templates
+2025-07-31 21:52:50,313 - __main__ - INFO - PLC Decompiler Web Application initialized
+2025-07-31 21:52:50,334 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-31 21:52:50,334 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-31 21:52:56,427 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:52:56] "GET /?id=863e9bab-96ca-460c-9c71-68fe3f30f1c7&vscodeBrowserReqId=1754013176402 HTTP/1.1" 200 -
+2025-07-31 21:53:03,230 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:53:03] "GET /upload HTTP/1.1" 200 -
+2025-07-31 21:53:12,099 - __main__ - INFO - Starting L5X file processing: uploads\20250731_215312_Assembly_Controls_Robot.L5X
+2025-07-31 21:53:12,100 - src.core.processing_pipeline - INFO - Starting pipeline processing for: uploads\20250731_215312_Assembly_Controls_Robot.L5X
+2025-07-31 21:53:12,100 - __main__ - INFO - Processing progress: Executing Validate L5X file format and structure (0.0%)
+2025-07-31 21:53:12,104 - __main__ - INFO - Processing progress: Executing Parse L5X XML content (20.0%)
+2025-07-31 21:53:12,104 - src.core.l5x_parser - INFO - Starting L5X file parsing: uploads\20250731_215312_Assembly_Controls_Robot.L5X
+2025-07-31 21:53:12,107 - src.core.l5x_parser - INFO - L5X parsing completed in 0.00 seconds
+2025-07-31 21:53:12,107 - src.core.l5x_parser - INFO - Found: 29 controller tags, 2 programs
+2025-07-31 21:53:12,108 - __main__ - INFO - Processing progress: Executing Extract structured data from parsed content (40.0%)
+2025-07-31 21:53:12,108 - __main__ - INFO - Processing progress: Executing Analyze PLC logic and dependencies (60.0%)
+2025-07-31 21:53:12,108 - __main__ - INFO - Processing progress: Executing Generate documentation from analysis (80.0%)
+2025-07-31 21:53:12,108 - __main__ - INFO - Processing progress: Processing complete (100%)
+2025-07-31 21:53:12,109 - src.core.processing_pipeline - INFO - Pipeline processing completed in 0.01s (Success: True)
+2025-07-31 21:53:12,110 - __main__ - INFO - L5X processing completed in 0.01 seconds
+2025-07-31 21:53:12,110 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:53:12] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-07-31 21:53:12,115 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:53:12] "[32mGET /analysis HTTP/1.1[0m" 302 -
+2025-07-31 21:53:12,123 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:53:12] "GET /upload HTTP/1.1" 200 -
+2025-07-31 21:53:47,473 - __main__ - INFO - Starting L5X file processing: uploads\20250731_215347_Assembly_Controls_Robot.L5X
+2025-07-31 21:53:47,473 - src.core.processing_pipeline - INFO - Starting pipeline processing for: uploads\20250731_215347_Assembly_Controls_Robot.L5X
+2025-07-31 21:53:47,473 - __main__ - INFO - Processing progress: Executing Validate L5X file format and structure (0.0%)
+2025-07-31 21:53:47,473 - __main__ - INFO - Processing progress: Executing Parse L5X XML content (20.0%)
+2025-07-31 21:53:47,473 - src.core.l5x_parser - INFO - Starting L5X file parsing: uploads\20250731_215347_Assembly_Controls_Robot.L5X
+2025-07-31 21:53:47,473 - src.core.l5x_parser - INFO - L5X parsing completed in 0.00 seconds
+2025-07-31 21:53:47,473 - src.core.l5x_parser - INFO - Found: 29 controller tags, 2 programs
+2025-07-31 21:53:47,473 - __main__ - INFO - Processing progress: Executing Extract structured data from parsed content (40.0%)
+2025-07-31 21:53:47,473 - __main__ - INFO - Processing progress: Executing Analyze PLC logic and dependencies (60.0%)
+2025-07-31 21:53:47,483 - __main__ - INFO - Processing progress: Executing Generate documentation from analysis (80.0%)
+2025-07-31 21:53:47,483 - __main__ - INFO - Processing progress: Processing complete (100%)
+2025-07-31 21:53:47,484 - src.core.processing_pipeline - INFO - Pipeline processing completed in 0.01s (Success: True)
+2025-07-31 21:53:47,485 - __main__ - INFO - L5X processing completed in 0.01 seconds
+2025-07-31 21:53:47,486 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:53:47] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-07-31 21:53:47,492 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:53:47] "[32mGET /analysis HTTP/1.1[0m" 302 -
+2025-07-31 21:53:47,496 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:53:47] "GET /upload HTTP/1.1" 200 -
+2025-07-31 21:54:11,380 - __main__ - INFO - Created 8 HTML templates
+2025-07-31 21:54:11,386 - __main__ - INFO - PLC Decompiler Web Application initialized
+2025-07-31 21:54:11,412 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-31 21:54:11,414 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-31 21:54:15,397 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:54:15] "GET / HTTP/1.1" 200 -
+2025-07-31 21:54:17,604 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:54:17] "GET / HTTP/1.1" 200 -
+2025-07-31 21:54:19,926 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:54:19] "GET /upload HTTP/1.1" 200 -
+2025-07-31 21:54:27,448 - __main__ - INFO - Starting L5X file processing: uploads\20250731_215427_Assembly_Controls_Robot.L5X
+2025-07-31 21:54:27,448 - src.core.processing_pipeline - INFO - Starting pipeline processing for: uploads\20250731_215427_Assembly_Controls_Robot.L5X
+2025-07-31 21:54:27,448 - __main__ - INFO - Processing progress: Executing Validate L5X file format and structure (0.0%)
+2025-07-31 21:54:27,459 - __main__ - INFO - Processing progress: Executing Parse L5X XML content (20.0%)
+2025-07-31 21:54:27,459 - src.core.l5x_parser - INFO - Starting L5X file parsing: uploads\20250731_215427_Assembly_Controls_Robot.L5X
+2025-07-31 21:54:27,460 - src.core.l5x_parser - INFO - L5X parsing completed in 0.00 seconds
+2025-07-31 21:54:27,460 - src.core.l5x_parser - INFO - Found: 29 controller tags, 2 programs
+2025-07-31 21:54:27,460 - __main__ - INFO - Processing progress: Executing Extract structured data from parsed content (40.0%)
+2025-07-31 21:54:27,460 - __main__ - INFO - Processing progress: Executing Analyze PLC logic and dependencies (60.0%)
+2025-07-31 21:54:27,460 - __main__ - INFO - Processing progress: Executing Generate documentation from analysis (80.0%)
+2025-07-31 21:54:27,460 - __main__ - INFO - Processing progress: Processing complete (100%)
+2025-07-31 21:54:27,460 - src.core.processing_pipeline - INFO - Pipeline processing completed in 0.01s (Success: True)
+2025-07-31 21:54:27,476 - __main__ - INFO - L5X processing completed in 0.03 seconds
+2025-07-31 21:54:27,480 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:54:27] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-07-31 21:54:27,746 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:54:27] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 21:54:50,886 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:54:50] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 21:54:52,421 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:54:52] "GET /generate HTTP/1.1" 200 -
+2025-07-31 21:54:55,783 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:54:55] "GET /advanced HTTP/1.1" 200 -
+2025-07-31 21:54:58,759 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 21:54:58] "GET /generate HTTP/1.1" 200 -
+2025-07-31 22:27:48,053 - __main__ - INFO - Created 8 HTML templates
+2025-07-31 22:28:56,411 - __main__ - INFO - Created 8 HTML templates
+2025-07-31 22:30:59,144 - __main__ - INFO - Created 8 HTML templates
+2025-07-31 22:30:59,151 - __main__ - INFO - PLC Decompiler Web Application initialized
+2025-07-31 22:30:59,184 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-31 22:30:59,185 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-31 22:33:32,509 - __main__ - INFO - Created 8 HTML templates
+2025-07-31 22:33:32,509 - __main__ - INFO - PLC Decompiler Web Application initialized
+2025-07-31 22:33:32,538 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-07-31 22:33:32,538 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-07-31 22:33:38,950 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 22:33:38] "GET / HTTP/1.1" 200 -
+2025-07-31 22:33:40,606 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 22:33:40] "GET /upload HTTP/1.1" 200 -
+2025-07-31 22:33:45,219 - __main__ - INFO - Starting L5X file processing: uploads\20250731_223345_Assembly_Controls_Robot.L5X
+2025-07-31 22:33:45,220 - __main__ - INFO - Processing progress: Processing mock data (50%)
+2025-07-31 22:33:45,222 - __main__ - INFO - Processing progress: Completed (100%)
+2025-07-31 22:33:45,222 - __main__ - INFO - L5X processing completed in 0.00 seconds
+2025-07-31 22:33:45,224 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 22:33:45] "[32mPOST /upload HTTP/1.1[0m" 302 -
+2025-07-31 22:33:45,515 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 22:33:45] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 22:33:50,626 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 22:33:50] "GET /analysis HTTP/1.1" 200 -
+2025-07-31 22:33:58,089 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 22:33:58] "GET /generate HTTP/1.1" 200 -
+2025-07-31 22:34:17,392 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 22:34:17] "GET /advanced HTTP/1.1" 200 -
+2025-07-31 22:34:18,868 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 22:34:18] "GET /generate HTTP/1.1" 200 -
+2025-07-31 22:34:19,517 - werkzeug - INFO - 127.0.0.1 - - [31/Jul/2025 22:34:19] "GET /advanced HTTP/1.1" 200 -

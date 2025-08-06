@@ -1,0 +1,53 @@
+{
+  "providers": {
+    "gemma_27b": {
+      "provider": "google_gemini",
+      "model_name": "gemma-2-27b-it",
+      "api_key": "AIzaSyDYUKdV9olLLew3buH9LCXFPqBellbZKFs",
+      "max_tokens": 8000,
+      "temperature": 0.1,
+      "timeout": 60,
+      "max_retries": 3,
+      "capabilities": ["text_generation", "code_generation"],
+      "cost_per_1k_tokens": 0.0,
+      "context_window": 8192
+    },
+    "gemini_pro": {
+      "provider": "google_gemini",
+      "model_name": "gemini-1.5-pro",
+      "api_key": "AIzaSyDYUKdV9olLLew3buH9LCXFPqBellbZKFs",
+      "max_tokens": 8000,
+      "temperature": 0.1,
+      "timeout": 60,
+      "max_retries": 3,
+      "capabilities": ["text_generation", "code_generation", "function_calling"],
+      "cost_per_1k_tokens": 0.0,
+      "context_window": 2000000
+    }
+  },
+  "active_provider": "gemma_27b",
+  "models": {
+    "gemma-2-27b-it": {
+      "name": "Gemma 2 27B Instruct",
+      "provider": "google_gemini",
+      "context_window": 8192,
+      "max_output_tokens": 8000,
+      "capabilities": ["text_generation", "code_generation"],
+      "optimized_for": ["instruction_following", "code_quality"]
+    },
+    "gemini-1.5-pro": {
+      "name": "Gemini 1.5 Pro", 
+      "provider": "google_gemini",
+      "context_window": 2000000,
+      "max_output_tokens": 8000,
+      "capabilities": ["text_generation", "code_generation", "function_calling"],
+      "optimized_for": ["quality", "reasoning"]
+    }
+  },
+  "usage_stats": {
+    "total_requests": 0,
+    "total_tokens": 0,
+    "total_cost": 0.0,
+    "provider_usage": {}
+  }
+}
