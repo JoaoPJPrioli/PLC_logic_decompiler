@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database
+  namespace: test-staging
+  labels:
+    app: database
+    version: v1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+        version: v1
+    spec:
+      containers:
+      - name: database
+        image: plc-decompiler/database:latest
+        ports:
+        - containerPort: 5432
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 2Gi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        env:
+        - name: POSTGRES_DB
+          value: "plc_decompiler"
+        - name: POSTGRES_USER
+          value: "plc_user"
+        - name: POSTGRES_PASSWORD
+          value: "secure_password"
+        volumeMounts:
+        - name: postgres-data
+          mountPath: /var/lib/postgresql/data
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 5432
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 5432
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      volumes:
+      - name: postgres-data
+        persistentVolumeClaim:
+          claimName: postgres-data-pvc

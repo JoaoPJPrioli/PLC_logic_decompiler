@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: visualization-service
+  namespace: test-development
+  labels:
+    app: visualization-service
+    version: v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: visualization-service
+  template:
+    metadata:
+      labels:
+        app: visualization-service
+        version: v1
+    spec:
+      containers:
+      - name: visualization-service
+        image: plc-decompiler/visualization-service:latest
+        ports:
+        - containerPort: 8084
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1Gi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        env:
+        - name: SERVICE_PORT
+          value: "8084"
+        - name: MAX_NODES_3D
+          value: "5000"
+        - name: RENDER_TIMEOUT
+          value: "120"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8084
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8084
+          initialDelaySeconds: 5
+          periodSeconds: 5

@@ -1,0 +1,30 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: plc-decompiler-monitor
+  namespace: test-production
+  labels:
+    app: plc-decompiler
+spec:
+  selector:
+    matchLabels:
+      app: plc-decompiler
+  endpoints:
+  - port: http
+    path: /metrics
+    interval: 30s
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: plc-decompiler-metrics
+  namespace: test-production
+  labels:
+    app: plc-decompiler
+spec:
+  selector:
+    app: api-gateway
+  ports:
+  - name: http
+    port: 9090
+    targetPort: 9090

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: test-production
+  labels:
+    name: test-production
+    environment: production
+    app: plc-decompiler

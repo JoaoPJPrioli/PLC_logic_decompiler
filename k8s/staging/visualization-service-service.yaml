@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: visualization-service
+  namespace: test-staging
+  labels:
+    app: visualization-service
+spec:
+  selector:
+    app: visualization-service
+  ports:
+  - port: 8084
+    targetPort: 8084
+    protocol: TCP
+  type: ClusterIP

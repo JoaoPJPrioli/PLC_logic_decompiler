@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: plc-decompiler-config
+  namespace: test-staging
+data:
+  environment: staging
+  log_level: INFO
+  max_file_size: "100MB"
+  redis_url: "redis://redis:6379"
+  postgres_url: "postgresql://plc_user:secure_password@database:5432/plc_decompiler"
+  enable_monitoring: "True"
+  enable_logging: "True"

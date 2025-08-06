@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: analysis-service
+  namespace: test-staging
+  labels:
+    app: analysis-service
+    version: v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: analysis-service
+  template:
+    metadata:
+      labels:
+        app: analysis-service
+        version: v1
+    spec:
+      containers:
+      - name: analysis-service
+        image: plc-decompiler/analysis-service:latest
+        ports:
+        - containerPort: 8082
+        resources:
+          limits:
+            cpu: 1500m
+            memory: 1.5Gi
+          requests:
+            cpu: 100m
+            memory: 128Mi
+        env:
+        - name: SERVICE_PORT
+          value: "8082"
+        - name: ANALYSIS_TIMEOUT
+          value: "600"
+        - name: MAX_GRAPH_NODES
+          value: "10000"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8082
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8082
+          initialDelaySeconds: 5
+          periodSeconds: 5
