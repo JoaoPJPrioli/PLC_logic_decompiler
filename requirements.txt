@@ -274,7 +274,7 @@ cachetools>=5.3.0
 # ============================
 # Garbage Collection
 # ============================
-gc-python-utils>=0.1.0
+# gc-python-utils>=0.1.0
 
 # ============================
 # Threading & Multiprocessing

@@ -1,0 +1,29 @@
+# Minimal requirements for PLC Logic Decompiler
+
+# Core Web Framework
+Flask>=2.3.0
+Werkzeug>=2.3.0
+Jinja2>=3.1.0
+ItsDangerous>=2.1.0
+Click>=8.1.0
+MarkupSafe>=2.1.0
+
+# XML Processing
+lxml>=4.9.0
+
+# Data Processing & Analysis
+pandas>=1.5.0
+numpy>=1.21.0
+openpyxl>=3.1.0
+
+# AI & Machine Learning
+openai>=1.3.0
+langchain>=0.0.300
+tiktoken>=0.5.0
+
+# Vector Database & Semantic Search
+chromadb>=0.4.15
+sentence-transformers>=2.2.0
+
+# Industrial Communication
+pycomm3>=1.2.14
