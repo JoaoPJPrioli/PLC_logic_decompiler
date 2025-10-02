@@ -4,7 +4,7 @@
     "gemini": {
       "provider": "google_gemini",
       "model_name": "gemma-3-27b-it",
-      "api_key": "AIzaSyDYUKdV9olLLew3buH9LCXFPqBellbZKFs",
+      "api_key": "ADD_Here",
       "temperature": 0.1,
       "max_tokens": 4000,
       "timeout": 60,
@@ -21,3 +21,4 @@
     "provider_usage": {}
   }
 }
+
