@@ -3,7 +3,7 @@
     "gemma_27b": {
       "provider": "google_gemini",
       "model_name": "gemma-2-27b-it",
-      "api_key": "AIzaSyDYUKdV9olLLew3buH9LCXFPqBellbZKFs",
+      "api_key": "ADD_HERE",
       "max_tokens": 8000,
       "temperature": 0.1,
       "timeout": 60,
@@ -15,7 +15,7 @@
     "gemini_pro": {
       "provider": "google_gemini",
       "model_name": "gemini-1.5-pro",
-      "api_key": "AIzaSyDYUKdV9olLLew3buH9LCXFPqBellbZKFs",
+      "api_key": "ADD_HERE",
       "max_tokens": 8000,
       "temperature": 0.1,
       "timeout": 60,
@@ -51,3 +51,4 @@
     "provider_usage": {}
   }
 }
+
